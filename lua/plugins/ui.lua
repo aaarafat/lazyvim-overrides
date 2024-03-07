@@ -1,8 +1,8 @@
 return {
-      -- add gruvbox
+-- one_monokai
   { "cpea2506/one_monokai.nvim" },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load one_monokai
   {
     "LazyVim/LazyVim",
     opts = {
