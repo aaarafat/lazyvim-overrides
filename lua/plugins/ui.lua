@@ -14,38 +14,47 @@ GET_HEADER = function()
   logo = string.rep("\n", 8) .. logo .. "\n\n"
   return vim.split(logo, "\n")
 end
-
-return {
-
-  { "cpea2506/one_monokai.nvim" },
-  { "tanvirtin/monokai.nvim" },
-  {
-    "navarasu/onedark.nvim",
-    opts = {
-      style = "warmer",
-    },
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    opts = {
-      transparent_background = true,
-    },
-  },
-  {
+-- to keep vscode theme
+if vim.g.vscode then
+  return { {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
-      transparent_background = true,
+      colorscheme = "",
     },
-  },
-  {
-    "nvimdev/dashboard-nvim",
-    opts = {
-      config = {
-        header = GET_HEADER(),
+  } }
+else
+  return {
+
+    { "cpea2506/one_monokai.nvim" },
+    { "tanvirtin/monokai.nvim" },
+    {
+      "navarasu/onedark.nvim",
+      opts = {
+        style = "warmer",
       },
     },
-  },
-}
+    {
+      "catppuccin/nvim",
+      name = "catppuccin",
+      priority = 1000,
+      opts = {
+        transparent_background = true,
+      },
+    },
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "catppuccin",
+        transparent_background = true,
+      },
+    },
+    {
+      "nvimdev/dashboard-nvim",
+      opts = {
+        config = {
+          header = GET_HEADER(),
+        },
+      },
+    },
+  }
+end
