@@ -10,7 +10,20 @@ GET_HEADER = function()
 █▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █
     █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    
 ]]
-
+  local bismAllah = [[
+▄▄▄ ▄ ▄ ▄ ▄ ▄ ▄
+█▄█▄█▄█▄█▄█ █ █
+█   ▄ ▄ ▄ ▄ █ █
+▄▄▄ █ █ █ ▄ █ █
+█▄█▄█▄█ █ █ ▄ █
+▄ ▄ ▄▄▄▄▄ █ █ █
+▄ █▄▄▄▄▄█ █ █ █
+█▄█ █▄█ ▄▄█ █ █
+▄▄▄▄▄▄▄▄█ ▄ █ █
+▄▄▄▄▄ ▄▄▄ █ █ █
+█▄█ █▄▄▄█ █▄█ █
+█ ▄ ▄ ▄▄▄▄█ ▄▄█
+]]
   logo = string.rep("\n", 8) .. logo .. "\n\n"
   return vim.split(logo, "\n")
 end
@@ -27,6 +40,9 @@ else
 
     { "cpea2506/one_monokai.nvim" },
     { "tanvirtin/monokai.nvim" },
+    { "rebelot/kanagawa.nvim", opts = {
+      transparent = true,
+    } },
     {
       "navarasu/onedark.nvim",
       opts = {
@@ -38,14 +54,13 @@ else
       name = "catppuccin",
       priority = 1000,
       opts = {
-        transparent_background = true,
+        -- transparent_background = true,
       },
     },
     {
       "LazyVim/LazyVim",
       opts = {
-        colorscheme = "catppuccin",
-        transparent_background = true,
+        colorscheme = "kanagawa-dragon",
       },
     },
     {
